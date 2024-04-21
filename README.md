@@ -5,7 +5,7 @@ This is an Gallery project
 ### Todo
 
 - [x] use shadcn
-- [ ] use prisma orm kit
+- [x] use prisma orm kit
 - [ ] use next auth for authentication
 - [ ] parallel route for login and register model
 - [ ] parallel route for login and register model
