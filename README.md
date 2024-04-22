@@ -6,7 +6,7 @@ This is an Gallery project
 
 - [x] use shadcn
 - [x] use prisma orm kit
-- [ ] use next auth for authentication
+- [x] use next auth for authentication
 - [ ] parallel route for login and register model
 - [ ] parallel route for login and register model
 - [ ] upload images
