@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "./_components/Header";
+import { Toaster } from "@/components/ui/sonner";
 
 const mon = Montserrat({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={cn(mon.className, "antialiased")}>
         <Header />
         {children}
+        <Toaster position="top-right" />
       </body>
     </html>
   );

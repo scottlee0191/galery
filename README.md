@@ -8,8 +8,7 @@ This is an Gallery project
 - [x] use prisma orm kit
 - [x] use next auth for authentication
 - [ ] parallel route for login and register model
-- [ ] parallel route for login and register model
-- [ ] upload images
+- [x] upload images
 - [ ] list images home
 - [ ] images detail with modal
 - [ ] image transition api(only chrome)
