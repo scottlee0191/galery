@@ -3,6 +3,7 @@ import { SignIn } from "@/components/sign-in";
 import { SignOut } from "@/components/sign-out";
 import Link from "next/link";
 import Upload from "./Upload";
+import { Button } from "@/components/ui/button";
 
 export default async function Header() {
   const user = await auth();
@@ -20,7 +21,9 @@ export default async function Header() {
               <SignOut />
             </div>
           ) : (
-            <SignIn />
+            <Link href="/login">
+              <Button>Sign In</Button>
+            </Link>
           )}
         </nav>
       </div>
