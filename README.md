@@ -9,7 +9,7 @@ This is an Gallery project
 - [x] use next auth for authentication
 - [x] parallel route for login and register model
 - [x] upload images
-- [ ] list images home
+- [x] list images home
 - [ ] images detail with modal
 - [ ] image transition api(only chrome)
 - [ ] deploy to vercel

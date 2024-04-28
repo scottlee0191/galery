@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import { prisma } from "@/lib";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
 
@@ -16,16 +17,13 @@ export const ourFileRouter = {
       // If you throw, the user will not be able to upload
       if (!session) throw new UploadThingError("Unauthorized");
 
-      // Whatever is returned here is accessible in onUploadComplete as `metadata`
       return { userId: session.user?.id };
     })
     .onUploadComplete(async ({ metadata, file }) => {
-      // This code RUNS ON YOUR SERVER after upload
-      console.log("Upload complete for userId:", metadata.userId);
+      await prisma.image.create({
+        data: { url: file.url, name: file.name, userId: metadata.userId },
+      });
 
-      console.log("file url", file.url);
-
-      // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
       return { uploadedBy: metadata.userId };
     }),
 } satisfies FileRouter;

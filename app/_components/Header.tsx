@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export default async function Header() {
   const user = await auth();
+  console.log("🚀 ~ Header ~ user:", user);
 
   return (
     <header className="border-b shadow-sm py-4">
