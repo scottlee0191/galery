@@ -11,7 +11,7 @@ This is an Gallery project
 - [x] upload images
 - [x] list images home
 - [x] images list with pagination
-- [ ] images detail with modal
+- [x] images detail with modal
 - [ ] image transition api(only chrome)
 - [ ] deploy to vercel
 

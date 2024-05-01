@@ -1,7 +1,6 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
@@ -10,7 +9,6 @@ import {
 import { prisma } from "@/lib";
 
 export default async function Page({ page }: { page: number }) {
-  console.log("🚀 ~ Page ~ page:", page);
   const imageCount = await prisma.image.count();
   const perPage = +(process.env.PER_PAGE ?? 6);
   if (imageCount < perPage) return null;
