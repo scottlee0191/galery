@@ -12,7 +12,8 @@ This is an Gallery project
 - [x] list images home
 - [x] images list with pagination
 - [x] images detail with modal
-- [ ] image transition api(only chrome)
+- [x] responsive contain
+- [x] make ui look better
 - [ ] deploy to vercel
 
 ## Getting Started

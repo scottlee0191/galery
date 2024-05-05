@@ -22,7 +22,7 @@ export default async function DashboardPage({
   return (
     <div className="container p-5">
       <h1 className="text-4xl font-semibold mb-4">Your gallery!</h1>
-      <div className="grid grid-cols-3 gap-4 mb-4">
+      <div className="grid md:grid-cols-3 gap-4 mb-4">
         {images.map((image) => (
           <Link
             href={`/dashboard/image/${image.id}`}

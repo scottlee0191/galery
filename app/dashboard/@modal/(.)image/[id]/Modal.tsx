@@ -14,7 +14,7 @@ export default function Modal({ children }: PropsWithChildren) {
         <div className="container">
           <Button
             variant="link"
-            className="justify-start"
+            className="justify-start px-0"
             onClick={() => router.back()}
           >
             Back

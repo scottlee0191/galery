@@ -1,6 +1,5 @@
 import { Image as ImageEntity } from "@prisma/client";
 import Image from "next/image";
-import React from "react";
 
 export default function UserImage({ image }: { image: ImageEntity }) {
   return (
