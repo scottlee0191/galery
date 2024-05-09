@@ -1,11 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { prisma } from "@/lib";
+import Image from "next/image";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
+  const image = await prisma.image.findFirst();
   return (
-    <>
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+    <main className="space-y-12 md:space-y-24 lg:space-y-32">
+      <section className="w-full  pt-32">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl/none lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-red-500">
@@ -16,16 +21,16 @@ export default async function Home() {
               your photos. Beautifully designed. Intuitive. Powerful.
             </p>
           </div>
-          <img
+          <Image
             alt="Screenshot"
-            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
+            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center shadow-xl"
             height="310"
-            src="/placeholder.svg"
+            src={image?.url ?? "/placeholder.svg"}
             width="550"
           />
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <section className="w-full ">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -40,33 +45,33 @@ export default async function Home() {
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="grid gap-4 sm:gap-6 md:gap-8 lg:gap-12">
             <div className="flex flex-col items-center space-y-2">
-              <img
+              <Image
                 alt="Screenshot"
                 className="aspect-[9/18] overflow-hidden rounded-lg object-contain object-center peer"
                 height="600"
                 src="/placeholder.svg"
                 width="300"
               />
-              <Button className="mx-auto peer:hidden translate-y-2 translate-y-0 duration-300 ease-in-out">
+              <Button className="mx-auto peer:hidden translate-y-0 duration-300 ease-in-out">
                 Download for iOS
               </Button>
             </div>
             <div className="flex flex-col items-center space-y-2">
-              <img
+              <Image
                 alt="Screenshot"
-                className="aspect-[9/18] peer overflow-hidden rounded-lg object-contain object-center translate-y-2 translate-y-0 duration-300 ease-in-out object-cover"
+                className="aspect-[9/18] peer overflow-hidden rounded-lg object-contain object-center translate-y-0 duration-300 ease-in-out"
                 height="600"
                 src="/placeholder.svg"
                 width="300"
               />
-              <Button className="mx-auto peer:hidden translate-y-2 translate-y-0 duration-300 ease-in-out">
+              <Button className="mx-auto peer:hidden translate-y-0 duration-300 ease-in-out">
                 Download for Android
               </Button>
             </div>
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+      <section className="w-full py-32 bg-gray-100 dark:bg-gray-800">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col gap-2 items-center justify-center text-center">
             <div className="space-y-2">
@@ -97,7 +102,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <section className="w-full ">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -109,35 +114,35 @@ export default async function Home() {
             </p>
           </div>
           <div className="grid w-full grid-cols-2 lg:grid-cols-5 items-center justify-center gap-8 lg:gap-12 [&>img]:mx-auto">
-            <img
+            <Image
               alt="Logo"
               className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
               height="70"
               src="/placeholder.svg"
               width="140"
             />
-            <img
+            <Image
               alt="Logo"
               className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
               height="70"
               src="/placeholder.svg"
               width="140"
             />
-            <img
+            <Image
               alt="Logo"
               className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
               height="70"
               src="/placeholder.svg"
               width="140"
             />
-            <img
+            <Image
               alt="Logo"
               className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
               height="70"
               src="/placeholder.svg"
               width="140"
             />
-            <img
+            <Image
               alt="Logo"
               className="aspect-[2/1] col-span-2 lg:col-span-1 overflow-hidden rounded-lg object-contain object-center"
               height="70"
@@ -147,8 +152,8 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 border-t">
-        <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+      <section className="w-full  border-t">
+        <div className="container grid items-center justify-center gap-4 px-4 py-32 text-center md:px-6">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
               Experience the workflow the best frontend teams love.
@@ -176,6 +181,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }
